@@ -1,5 +1,5 @@
-import { Text, View, TouchableOpacity, StyleSheet} from "react-native";
 import { useRouter } from "expo-router";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function WelcomeScreen() {
 
@@ -10,13 +10,12 @@ export default function WelcomeScreen() {
   };
   return (
     <View style={styles.container}>
-      <Text  style={styles.text}>Welcome to Emotion Music Player User!</Text>
-      <Text style={styles.desc}>This app detects your mood and recommends you music based of that.</Text>
-      <TouchableOpacity style={styles.touchable} onPress={HandleAnalyzeMood} >
-        <Text style={styles.button}>
-          Analyze My Mood
-        </Text>
+      <Text  style={styles.text}>Welcome Back (User)</Text>
+      
+      <TouchableOpacity style={styles.logocontainer} onPress={HandleAnalyzeMood} >
+        <Image style={styles.logo} source={require('../assets/images/Emotify.png')} />
       </TouchableOpacity>
+      <Text style={styles.text}>Press The Button above to start.</Text>
     </View>
   );
 }
@@ -25,8 +24,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#211e1e',
-    gap: 300,
+    backgroundColor: '#10151b',
+    gap: 100,
     
   },
   text: {
@@ -39,13 +38,17 @@ const styles = StyleSheet.create({
   },
   button: {
     color: 'black',
-    fontSize: 25,
+    fontSize: 20,
     fontWeight: 'bold'
   },
-  touchable: {
-    backgroundColor: '#2b9bcf',
-    borderRadius: 30,
-    paddingVertical: 8,
-    paddingHorizontal: 13,
+  logocontainer:{
+    width: '60%',
+    aspectRatio: 1,
+  },
+
+  logo: {
+    width: '100%',
+    height: '100%',
+    resizeMode: 'contain'
   },
 });

@@ -1,6 +1,6 @@
-import {View, Text, Button, StyleSheet} from 'react-native';
-import {useState} from 'react';
-import {useCameraPermissions, CameraView } from 'expo-camera';
+import { CameraView, useCameraPermissions } from 'expo-camera';
+import { useState } from 'react';
+import { Button, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 
 export default function CaptureScreen(){
@@ -30,7 +30,9 @@ export default function CaptureScreen(){
         <View style={styles.container}>
             <CameraView style={styles.camera} facing={facing}>
                 <View>
-                    <Button onPress={toggleCameraFacing} title="Flip Camera"/>
+                    <TouchableOpacity style={styles.fliplogocontainer} onPress={toggleCameraFacing}>
+                        <Image style={styles.filplogo} source={require('../assets/images/CameraFlip.png')}/>
+                    </TouchableOpacity>
                 </View>
             </CameraView>
         </View>
@@ -45,4 +47,14 @@ const styles = StyleSheet.create({
 camera: {
    flex: 1
   },
+  fliplogocontainer:{
+    width: '18%',
+    aspectRatio: 1,
+    margin: '5%'
+  },
+  filplogo:{
+    width: '100%',
+    height: '100%',
+    resizeMode: 'contain'
+  }
 });
