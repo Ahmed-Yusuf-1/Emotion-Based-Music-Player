@@ -13,7 +13,7 @@ export default function WelcomeScreen() {
       <Text  style={styles.text}>Welcome Back (User)</Text>
       
       <TouchableOpacity style={styles.logocontainer} onPress={HandleAnalyzeMood} >
-        <Image style={styles.logo} source={require('../assets/images/Emotify.png')} />
+        <Image style={styles.logo} source={require('../../assets/images/Emotify.png')} />
       </TouchableOpacity>
       <Text style={styles.text}>Press The Button above to start.</Text>
     </View>

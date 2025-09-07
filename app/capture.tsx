@@ -50,7 +50,7 @@ camera: {
   fliplogocontainer:{
     width: '18%',
     aspectRatio: 1,
-    margin: '5%'
+    margin: '10%'
   },
   filplogo:{
     width: '100%',
