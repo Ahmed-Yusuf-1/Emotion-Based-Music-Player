@@ -20,7 +20,7 @@ export default function CaptureScreen(){
     if(!permission.granted){
         return(
         <View>
-            <Text>We need Permission</Text>
+            <Text>We need your Permission</Text>
             <Button onPress={requestPermission} title="Grant permission"/>
         </View>
         )
